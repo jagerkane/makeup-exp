@@ -448,12 +448,13 @@ html{
 					.info-btn{
 						display: block;
 						position: absolute;
-						letter-spacing: .08rem;
+						// letter-spacing: .08rem;
 						font-size: .8rem;
 						font-weight: 600;
 						color: #e01212;
 						text-align: center;
-						padding: .5rem 1.5rem;
+						width: 5rem;
+						padding: .5rem 0rem;
 						@include border-radius(.8rem);
 						right: 0.8rem;
 						bottom: 0.8rem;
@@ -467,7 +468,54 @@ html{
 				}
 			}
 			.func-lst{
-				
+				color: black;
+				font-weight: 700;
+				font-size: 1.05rem;
+				display: flex;
+				flex-direction: column;
+				align-content: center;
+				padding: 1rem;
+				li{
+					position: relative;
+					padding: 1rem .5rem;
+					border-bottom: #ccc solid .05rem;
+					img{
+						width: 1.2rem;
+						height: 1.2rem;
+						position: absolute;
+						left: 1rem;
+					}
+					p{
+						margin-left: 2.2rem;
+					}
+					.btn-record{
+						position: absolute;
+						right: 1rem;
+						bottom: .8rem;
+						padding: .3rem .8rem;
+						background: $btnColor;
+						@include border-radius(1rem);
+						color: white;
+						font-weight: 200;
+						font-size: .8rem;
+						letter-spacing: .1rem;
+					}
+					.arrow{
+						position: absolute;
+						border:.015rem solid #ccc;
+						transform: rotate(-45deg);
+						-webkit-transform: rotate(-45deg);
+						-moz-transform: rotate(-45deg);
+						right: 1rem;
+						top: 50%;
+						border-width: 0 .1rem .1rem 0;
+						width: .8rem;
+						height: .8rem;
+						margin-top: -.4rem;
+						
+					}
+				}
+
 			}
 			.self-info-edit{
 				position: fixed;
@@ -556,6 +604,93 @@ html{
 					margin: 3rem auto;
 					// letter-spacing: 1rem;
 					@include border-radius(.3rem);
+				}
+			}
+			.contact-us{
+				position: fixed;
+				z-index: 3;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $backgroundColor;
+				.tab-bar{
+					display: flex;
+					align-items: center;
+					position: relative;
+					.bar-item{
+						flex: 1;
+						font-size: 1.2rem;
+						color: #cecece;
+						text-align: center;
+						padding: 1rem;
+						font-weight: 300;
+						background: white;
+					}
+					.item-active{
+						color: #333;
+						font-weight: 700;
+						position: relative;
+						&:after{
+							background-color: $textColor;
+							border-radius: .15rem;
+							bottom: 0;
+							content: "";
+							height: .3rem;
+							left: 50%;
+							margin-left: -1rem;
+							position: absolute;
+							width: 2rem;
+						}
+					}
+					
+				}
+				.service-info{
+					margin-top: 1rem;
+					.input-bg{
+						width: 100%;
+						background: white;
+						padding:1rem;
+						
+						.service-input{
+							font-size: 1.35rem;
+							font-weight: 500;
+							color: rgb(51, 51, 51);
+							line-height: 1.5rem;
+							width: 100%;
+							padding: 0.5rem;
+							resize: none;
+							outline: none;
+							cursor: text;
+							border: #f0f0f0 .01rem solid;
+						}
+					}
+					
+					.service-qrcode{
+						background: white;
+						margin-top: 1rem;
+						padding: 1rem;
+						text-align: center;
+						.title{
+							color: $textColor;
+							font-size: 1.3rem;
+							
+						}
+						img{
+							width: 12rem;
+							height: auto;
+							padding: 2rem;
+						}
+					}
+					.btn-send{
+						color: white;
+						background: $btnColor;
+						width: 80%;
+						margin: 2rem auto;
+						text-align: center;
+						padding: .8rem 0;
+						@include border-radius(.8rem);
+					}
 				}
 			}
 		}

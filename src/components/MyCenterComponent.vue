@@ -28,10 +28,26 @@
            </div>
        </div>
        <ul class="func-lst">
-           <li><div>每日赢口红</div></li>
-           <li><div>我的奖品</div></li>
-           <li><div @click="gotoMyAddress">邮寄地址</div></li>
-           <li><div>联系客服</div></li>
+           <li>
+               <img :src="bgIcon">
+               <p>每日赢口红</p>
+               <span class="btn-record">签到</span>
+            </li>
+           <li >
+                <img :src="bgIcon">
+                <p>我的奖品</p>
+                <i class="arrow"></i>
+            </li>
+           <li @click="gotoMyAddress">
+                <img :src="bgIcon">
+                <p>邮寄地址</p>
+                <i class="arrow"></i>
+            </li>
+           <li  @click="$router.push({name:'Service'})">
+                <img :src="bgIcon">
+                <p>联系客服</p>
+                <i class="arrow"></i>
+            </li>
        </ul>
        <router-view></router-view>
     </div>

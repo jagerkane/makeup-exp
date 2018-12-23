@@ -5,6 +5,9 @@ import MakeUpLstComponent from '@/components/MakeUpListComponent'
 import MyAddressComponent from '@/components/my/MyAddressComponent'
 import MyCenterComponent from '@/components/MyCenterComponent'
 import SelfInfoComponent from '@/components/my/SelfInfoComponent'
+import ContactUpComponent from '@/components/my/ContactUpComponent'
+import ServiceComponent from '@/components/my/ServiceComponent'
+import MessageComponent from '@/components/my/MessageComponent'
 Vue.use(Router)
 
 export default new Router({
@@ -37,6 +40,23 @@ export default new Router({
           name:'SelfInfo',
           path:'self',
           component:SelfInfoComponent  
+        },
+        {
+          name:'ContactUs',
+          path:'contact-us',
+          component:ContactUpComponent,
+          children:[
+            {
+              name: "Service",
+              path: 'service',
+              component:ServiceComponent,
+            },
+            {
+              name:'Message',
+              path:'message',
+              component:MessageComponent,
+            }
+          ]
         }
       ]
     },
