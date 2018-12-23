@@ -1,0 +1,56 @@
+.container{
+	.label-row{
+		margin:10px 5px;
+		.label-name{
+			margin-left:0px;
+			font-size: 16px;
+			// font-weight:bold;
+		}
+    .label-right-align{
+      text-align: right;
+    }
+    .label-color{
+      color: #ff0000;
+    }
+	}
+	.text-center{
+  		text-align:center;
+  		vertical-align:middle;
+  	}
+	.right-part{
+		.content-container{
+			border-radius:6px;
+			background-color:#eee;
+			padding:10px;
+		}
+	}
+}
+.modal{
+	.task-qrcode{
+		img{
+			margin:auto;
+		}
+	}
+}
+.content-setting{
+  .content-container{
+    border-radius:6px;
+    background-color:#eee;
+    padding:10px;
+  }
+}
+.select-left-margin{
+  .input-left-margin{
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .btn-left-margin{
+    margin-left: 15px;
+  }
+  .add-btn-left-margin{
+    margin-left: 8px;
+  }
+  .text-top-margin{
+    margin-top: 10px;
+  }
+}

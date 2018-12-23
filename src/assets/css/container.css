@@ -1,0 +1,64 @@
+/* line 2, ../sass/container.scss */
+.container .label-row {
+  margin: 4px 5px;
+}
+/* line 4, ../sass/container.scss */
+.container .label-row .label-name {
+  margin-left: 0px;
+  font-size: 16px;
+}
+/* line 9, ../sass/container.scss */
+.container .label-row .label-right-align {
+  text-align: right;
+}
+/* line 12, ../sass/container.scss */
+.container .label-row .label-color {
+  color: #ff0000;
+}
+/* line 16, ../sass/container.scss */
+.container .text-center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container .text-left {
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* line 21, ../sass/container.scss */
+.container .right-part .content-container {
+  border-radius: 6px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+/* line 30, ../sass/container.scss */
+.modal .task-qrcode img {
+  margin: auto;
+}
+
+/* line 36, ../sass/container.scss */
+.content-setting .content-container {
+  border-radius: 6px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+/* line 43, ../sass/container.scss */
+.select-left-margin .input-left-margin {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+/* line 47, ../sass/container.scss */
+.select-left-margin .btn-left-margin {
+  margin-left: 15px;
+}
+/* line 50, ../sass/container.scss */
+.select-left-margin .add-btn-left-margin {
+  margin-left: 8px;
+}
+/* line 53, ../sass/container.scss */
+.select-left-margin .text-top-margin {
+  margin-top: 10px;
+}

@@ -1,0 +1,564 @@
+@import "compass/reset";
+@import "compass/css3";
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding:0;
+}
+html{
+	$textColor:#fb1f7f;
+	$btnColor:#ff7199;
+	color: black;
+	background-color: #fff;
+	$backgroundColor:#fef2f6;
+	::before,::after{
+		clear: both;
+	}
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	body{
+		width: 100%;
+		height:100%;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+		#app{
+			width: 100%;
+			height:100%;
+			display: block;
+			background: $backgroundColor;
+		}
+		.make-up-nav{
+			display: block;
+			width: 100%;
+			position: fixed;
+			z-index: 2;
+			bottom: 0;
+			background: white;
+			box-shadow: 0 0 0.02rem 0 rgba(0,0,0,.3);
+			-webkit-box-shadow: 0 0 0.02rem 0 rgba(0,0,0,.3);
+			-moz-box-shadow: 0 0 0.02rem 0 rgba(0,0,0,.3);
+    	color: #999;
+			ul{
+				width: 100%;
+				list-style: none;
+				display: -webkit-box;
+				display: flex;
+				display: -moz-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				/*-webkit-flex-flow:row nowrap;*/
+				justify-content: space-between;
+				flex-direction: row ;
+				flex-wrap: nowrap;
+				li{
+					display: block;
+					padding:.5rem;
+					margin: 0 .5rem;
+					font-size:1rem;
+					text-align:center;
+					position: relative;
+					img{
+						width: 2rem;
+						height: 2rem;
+					}
+					p{
+						text-align: center;
+						margin:.2rem 0;
+					}
+				}
+			}
+		}	
+		.make-up-list{
+			height:100%;
+			width: 100%;
+			text-align: center;
+			.top-bar{
+				margin: 0 auto;
+				position: relative;
+				padding: 1rem  5%;
+				display: flex;
+				justify-content: space-between;
+				.broadcast-container{
+					text-align: left;
+					background-color: hsla(0,0%,100%,.44);
+					background-position: .1rem .07rem;
+					background-repeat: no-repeat;
+					background-size: 2rem 2rem;
+					@include border-radius(2rem);
+					color: #fff;
+					font-size: .7rem;
+					height: 2rem;
+					line-height: 2rem;
+					overflow: hidden;
+					padding-left: 2.5rem;
+					padding-right:2.5rem;
+					position: relative;
+				}
+				.audio-btn{
+					background-size: 100% 100%;
+					border-radius: 50%;
+					height: 2rem;
+					margin-left: 2rem;
+					width: 2rem;
+					background: #eee
+				}
+			}
+			
+			.swiper-container{
+				width: 90%;
+				background: #ff3871;
+			}
+
+			.btn-container{
+				margin: .5rem 1rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.btn-try-game{
+					display: inline-block;
+					padding: .5rem 1rem;
+					color:white;
+					background: orange;
+					@include border-radius(1.5rem);
+					font-size:1.2rem;
+					font:bold;
+				}
+				
+				.btn-game-explain{
+					color: $textColor;
+					font-size: .85rem;
+					display: inline-block;
+					text-align: center;
+				}
+			}
+			.item-type-nav{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				li{
+					font-weight: 400;
+					color:$textColor;
+					font-size: .6rem;
+					line-height: 1rem;
+				}
+				.li-active{
+					font-size: .6rem;
+					font-weight: 600;
+					border-bottom: .1rem solid $textColor;
+					
+				}
+			}
+			.item-grid-container{
+				overflow-x: hidden;
+				overflow-y: scroll;
+				display: flex;
+				padding: .5rem;
+				flex-wrap: wrap;
+				flex-direction: row;
+				.make-up-item{
+					background: #fff;
+					width: calc(100% / 3 - 1rem );
+					margin:0.5rem;
+					@include border-radius( .5rem);
+					overflow: hidden;
+					img{
+						display: block;
+						width: 100%;
+						height: auto;
+						vertical-align: top;
+					}
+					.item-shop-price{
+						color:#ff344c;
+						font-size: 0.75rem;
+						padding: .2rem;
+					}
+					.item-name{
+						color: black;
+						font-size: .78rem;
+						word-spacing: .1rem;
+						padding:.2rem;
+					}
+					.item-desc{
+						padding:.2rem;
+						font-size: .78rem;
+					}
+					.item-price{
+						background: red;
+						width:100%;
+						font-size:1rem;
+						color:white;
+						padding:.5rem;
+					}
+				}
+			}
+		}
+		.game-explain{
+			background-color: rgba(0,0,0,.5);
+			color: $textColor;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+			.explain-inner{
+				background-color: #fff;
+				border-radius: .5rem;
+				font-size: 1rem;
+				height: 30rem;
+				width: 80%;
+				left: 10%;
+				overflow-y: auto;
+				top: 20%;
+				padding: 1rem;
+				position: absolute;
+				.btn-close{
+					position: absolute;
+					top: 1rem;
+					right: 1rem;
+					color: black;
+				}
+				.explain-title{
+					font-size: 1.2rem;
+					font-weight: 700;
+					margin-bottom: .5rem;
+					text-align: center;
+				}
+				.explain-item{
+					display: block;
+					text-align: left;
+					margin: .2rem 0;
+					font-weight: 500;
+					line-height: 1.5rem;
+				}
+			}
+		}
+		.user-login{
+			position: fixed;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			.user-login-bg{
+				position: absolute;
+				background-color: rgba(0,0,0,.5);
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+			.login-inner{
+				background: #fff;
+				border-radius: 1rem;
+				left: 50%;
+				width: 84%;
+				height: 50%;
+				padding:1rem;
+				transform: translate3d(-50%,-50%,0);
+				position: absolute;
+				top: 50%;
+				.login-title{
+					color: #333;
+					font-weight:700;
+					text-align: center;
+					font-size: 1.1rem;
+				}
+				.login-body{
+					padding: 2rem 0.5rem;
+					.login-content{
+						.user-code-container{
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							.user-pwd{
+								width:65%;
+							}
+							.btn-user-code{
+								padding: .7rem .5rem;
+								@include border-radius(.3rem);
+								color:$btnColor;
+								border: 1px solid $btnColor;
+								font-size: .7rem;
+								letter-spacing: .08rem;
+							}	
+						}
+					}
+					
+					.btn-login{
+						width: 100%;
+						color: white;
+						margin-top: 2rem;
+						background: $btnColor;
+						padding:.5rem 1rem;
+						font-size:1.2rem;
+						@include border-radius(1rem);
+					}
+					.subscriber-agreement{
+						padding: .8rem 0;
+						color: #999;
+						font-size: .8rem;
+						letter-spacing:.1rem; 
+						span{
+							text-decoration-line: underline;
+							text-decoration-style: solid;
+							color: $textColor;
+						}
+					}
+				}
+			}
+			
+		}
+		.subscribe-agreement-view{
+			background-color: rgba(0,0,0,.5);
+			position: fixed;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			.agreement-inner{
+				background: #fff;
+				border-radius: 1rem;
+				left: 50%;
+				width: 80%;
+				height: 80%;
+				padding:1rem;
+				transform: translate3d(-50%,-50%,0);
+				position: absolute;
+				top: 50%;
+				color: $textColor;
+
+				.btn-close{
+					position: absolute;
+					top: 1rem;
+					right: 1rem;
+					color: black;
+				}
+				.agreement-body{
+					padding: .5rem;
+					margin-bottom: 1rem;
+					text-align: left;
+					letter-spacing: .08rem;
+					width:100%;
+					height: 100%;
+					margin:10% 0;
+					overflow: hidden;
+					overflow-y: auto;
+					margin: auto;
+					.agreement-container{
+						line-height: 1.1rem;
+					}
+					
+				}
+			}
+		}
+
+		.my-center{
+			min-height: 100vh;
+			.user-info{
+				
+				background: $btnColor;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				height:7.5rem;
+				color: white;
+				.head-icon{
+					display: inline-block;
+					width: 4.5rem;
+					margin-left: 2rem;
+					margin-right: 1rem;
+					height: 4.5rem;
+					overflow: hidden;
+					@include border-radius(2.6rem);
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.user-info-name{
+					display: inline-block;
+					position: relative;
+					flex: 1;
+					.user-name{
+						font-weight: 700;
+						font-size: 1.15rem;
+						margin-bottom:.8rem;
+					}
+					.user-id{
+						font-size: 1rem;
+						font-weight: 400;
+					}
+					.arrow{
+						position: absolute;
+						border:.015rem solid #fff;
+						transform: rotate(-45deg);
+						-webkit-transform: rotate(-45deg);
+						-moz-transform: rotate(-45deg);
+						right: 1.5rem;
+						top: 50%;
+						border-width: 0 .15rem .15rem 0;
+						width: 1.1rem;
+						height: 1.1rem;
+						margin-top: -.8rem;
+					}
+				}
+			}
+			.info-detail{
+				display: flex;
+				justify-content: space-between;
+				padding: .8rem .6rem;
+				.info-item{
+					position: relative;
+					background-image:  linear-gradient(44deg,#ff9aa0,#ff7490);
+					@include border-radius(.3rem);
+					color: white;
+					flex: 1;
+					-webkit-box-flex: 1;
+					-moz-box-flex: 1;
+					padding: .9rem;
+					margin: 0rem 0.5rem;
+					font-size: 1rem;
+					color: white;
+					.info-bg{
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						width: 2.88rem;
+						height: 3.28rem;
+						opacity: .37;
+					}
+					.info-title{
+						font-size: 1.05rem;
+						font-weight: 700;
+						margin-bottom: .8rem;
+					}
+					.info-value{
+						font-size: 2rem;
+						font-weight: 750;
+						text-align: center;
+						width: 4rem;
+						margin-bottom: 1.2rem;
+					}
+					.info-btn{
+						display: block;
+						position: absolute;
+						letter-spacing: .08rem;
+						font-size: .8rem;
+						font-weight: 600;
+						color: #e01212;
+						text-align: center;
+						padding: .5rem 1.5rem;
+						@include border-radius(.8rem);
+						right: 0.8rem;
+						bottom: 0.8rem;
+					}
+					.btn-charge{
+						background: #fff7e1;
+					}
+					.btn-share{
+						background-color: #ffca2f;
+					}
+				}
+			}
+			.func-lst{
+				
+			}
+			.self-info-edit{
+				position: fixed;
+				z-index: 3;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $backgroundColor;
+				.info-label{
+					width: 100%;
+					display: flex;
+					align-items: center;
+					background: white;
+					height: 4rem;
+					font-size: 1rem;
+					padding: 0 .8rem;
+					letter-spacing: .05rem;
+					position: relative;
+					font-weight: 400;
+					img{
+						width: 2rem;
+						height: 2rem;
+						@include border-radius(1rem);
+						position: absolute;
+						right: 2.5rem;
+					}
+					.btn-name{
+						position: absolute;
+						right: 2.5rem;
+						text-align: right;
+					}
+					i{
+						position: absolute;
+						border:.01rem solid #ccc;
+						transform: rotate(-45deg);
+						-webkit-transform: rotate(-45deg);
+						-moz-transform: rotate(-45deg);
+						right: 1rem;
+						top: 50%;
+						border-width: 0 .2rem .2rem 0;
+						width: .9rem;
+						height: .9rem;
+						margin-top: -.45rem;
+					}
+				}
+				.btn-logout{
+					position: absolute;
+					bottom: 3rem;
+					width: 80%;
+					left: 10%;
+					padding: .8rem;
+					text-align: center;
+					background:#ccc;
+					color: white;
+					font-size: 1rem;
+					font-weight: 700;
+					letter-spacing: .15rem;
+					@include border-radius(.5rem);
+				}
+			}
+			.my-address{
+				position: fixed;
+				z-index: 3;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $backgroundColor;
+				.header{
+					text-align: center;
+					font-size: 1.3rem;
+					color: $textColor;
+					padding: 1rem 0.5rem;
+				}
+				.body{
+	
+				}
+				.btn-save{
+					padding:0.8rem 1rem;
+					background: $btnColor;
+					text-align: center;
+					color: white;
+					display: block;
+					width: 50%;
+					margin: 3rem auto;
+					// letter-spacing: 1rem;
+					@include border-radius(.3rem);
+				}
+			}
+		}
+	}
+
+}
