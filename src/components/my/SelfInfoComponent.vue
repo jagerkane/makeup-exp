@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-import defaultHeadIcon from '../../assets/img/default_head.png';
+import defaultHeadIcon from '../../assets/defaulthead.jpg';
 import * as types from '../../store/mutation-types';
 export default {
     data(){

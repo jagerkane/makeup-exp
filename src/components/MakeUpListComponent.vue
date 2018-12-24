@@ -35,7 +35,7 @@
 </style>
 <script>
 import ItemComponent from './ItemComponent.vue';
-import swiper1 from '../assets/img/swiper_1.png';
+import swiper1 from '../assets/swiper_1.jpg';
 import Swiper from 'Swiper';
 import GameExplainComponent from './GameExplainComponent.vue';
 import LoginComponentVue from './LoginComponent.vue';

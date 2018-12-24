@@ -37,8 +37,8 @@
     </div>
 </template>
 <script>
-import defaultHeaderUrl from "../assets/img/default_head.png"
-import infoIcon from "../assets/img/icon_balance.png"
+import defaultHeaderUrl from "../assets/defaulthead.jpg"
+import infoIcon from "../assets/icon_balance.png"
 export default {
     data(){
         return{
